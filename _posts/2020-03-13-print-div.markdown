@@ -1,0 +1,308 @@
+---
+layout: post
+title:  "無須套件！瀏覽器列印特定區塊"
+date:   2020-03-13 18:00:00 +0800
+categories:
+- Program
+tags: Html jquery print 列印
+description: 使用瀏覽器內建列印功能來列印特定區塊吧！
+---
+
+# DowYuu言
+
+最近某專案需求要列印特定區塊中的內容，第一時間想到就是用[html2canvas](https://html2canvas.hertzen.com/)搭配[jsPDF](https://github.com/MrRio/jsPDF)進行區塊擷取輸出，使用者在自行用PDF去做列印動作。
+
+但會遇到個問題，若有跨頁時，可能會有文字被一刀切成兩半的問題，十分影響閱讀... 這種情況想也不用想一定會被客戶抱怨。
+
+此時的經理說了看要不要用瀏覽器內建的列印功能，點下去就跳視窗出來印，也不用存PDF了...... 對齁怎麼沒想到！！！
+
+# 先上大大提供的示範
+
+先來看看網上前輩大大[Anders](https://stackoverflow.com/users/2200659/anders)提供的[範例](https://stackoverflow.com/questions/33732739/print-a-div-content-using-jquery/33733153#33733153)，稍微改一點點：
+
+```js
+function printDiv(){
+  var newWin=window.open('','列印視窗');
+  newWin.document.open();
+  newWin.document.write('<html>'
+    '<body onload="window.print()">'+
+      $('#DivIdToPrint').html()+
+    '</body>'+
+  '</html>');
+  newWin.document.close();
+  setTimeout(function(){newWin.close();},10);
+}
+```
+
+`DivIdToPrint`為要列印的區塊`id`，大概概念為：
+
+1. 開個新視窗
+3. 取得`DivIdToPrint`的區塊內容並塞進去新視窗中
+4. 在新視窗`onload`時執行視窗列印`window.print()`
+5. 列印後關閉該新視窗
+
+基本上這樣的程式碼符合今天的主題了，但是但是你會發現他有些美中不足的地方...
+
+# 列印區塊套個CSS吧
+
+當你把原本設置的漂漂亮亮的區塊用上面的方式送去列印，會發現整個區塊像是裸體一樣被印出來...因為沒有引入CSS。
+
+這邊引入CSS的方法千百萬種，可以加個`<head>`並引入你原本的CSS，或寫個專門列印用的CSS，又或直接寫個`<style>`塞進去...等等看你心情囉！
+
+我自己是用加了`<head>`並引入原本的CSS的做法啦，改動程式碼如下：
+
+```js
+function printDiv(){
+  var newWin=window.open('','列印視窗');
+  newWin.document.open();
+  newWin.document.write('<html>'+
+    '<head>'+
+      '<link rel="stylesheet" href="css/style.css">'+
+    '</head>'+
+    '<body onload="window.print()">'+
+      $('#DivIdToPrint').html()+
+    '</body>'+
+  '</html>');
+  newWin.document.close();
+  setTimeout(function(){newWin.close();},10);
+}
+```
+
+引入的`<link>`當然可以動態的方式抓出來放進去，但這部分就請自行處理囉XD
+
+# 設置套用於列印時的樣式
+
+在CSS中有個專門為列印用的media，設置在裡面的樣式僅會套用時列印時，寫法簡單直觀。在你的CSS檔案中使用：
+
+```css
+/* 一般樣式*/
+@media print{
+  /* 列印時專用樣式 */
+}
+```
+
+或者你也可以另外寫一個檔案專門為列印時套用，在你的CSS檔案中使用`@import`引入。
+
+```css
+/* 一般樣式*/
+@import "printStyle.css" print;
+```
+
+又或是同樣另外寫一個檔案專門為列印時套用，在你的`html`頁面中用`<link>`且設置`media="print"`引入。
+
+```html
+<link rel="stylesheet" href="normal.css" media="screen">
+<link rel="stylesheet" href="printStyle.css" media="print">
+```
+
+# 列印專用樣式設定
+
+有些樣式設定是專門為列印用，你平常幾乎不會看到。
+
+## 列印用字體單位
+
+相對於平常CSS用的px、em，針對列印用的尺寸單位推薦使用以下單位：
+
+`em`、` cm`、`mm`、`in`、`pt`、`pc`、`%`
+
+詳細可見[字體單位說明](https://www.w3.org/Style/Examples/007/units.en.html)。
+
+## 列印頁面尺寸@page
+
+這邊寫到一些目前我有記錄到或用到的，有部分屬性目前瀏覽器沒支援我就不寫了，詳細文件詳見 [W3C](https://www.w3.org/TR/css-page-3/)。
+
+### size 尺寸與頁面方向
+
+可設置：
+  - 寬度與高度（若只有設置一個值則寬度＝高度）
+  - 通用尺寸保留字： A4、A5...
+  - 頁面方向：portrait(直向，預設)、 landscape(橫向)
+
+頁面寬高或保留字可與方向搭配使用。
+
+```css
+@page{
+  size: portrait; /* 直向(預設) */
+  size: landscape; /* 橫向 */
+  size: 10cm; /* 單值則長寬皆為10cm */
+  size: 4cm 6cm; /* 寬4cm 高6cm */
+  size: A4;  /* 保留字 */
+  size: A4 landscape;  /* 尺寸/保留字 + 方向 */
+}
+```
+
+詳細設置請[看此](https://developer.mozilla.org/en-US/docs/Web/CSS/@page/size)。
+
+### orphans 底部保留最小行數
+
+必須在頁面底部保留的段落的最小行數。
+
+```css
+@page{
+  orphans: 3;
+}
+```
+
+### widows 頂部保留最小行數
+
+必須在頁面頂部保留的段落的最小行數。
+
+```css
+@page{
+  widows: 2;
+}
+```
+
+### :first
+
+列印時的第一頁。
+
+```css
+@page :first {
+  background-color: red;
+}
+```
+
+詳細設置請[看此](https://developer.mozilla.org/en-US/docs/Web/CSS/:first)。
+
+### :left 與 :right 左手頁面與右手頁面
+
+像是我們在印雙面文件時，若希望頁面留幾公分來裝訂，正面可能就要在左手邊留白，反面要在右手邊留白......`:left`和`:right`就是為此而生。
+
+用戶端會自動分別目前印到的頁數為左手頁面或右手頁面，進而去套用`:left`或`:right`的屬性設置。
+
+要依據文件內容書寫方向自己去判定第一頁為`:left`或`:right`。
+
+```css
+@page :left {
+  margin-left: 2cm;
+  margin-right: 4cm;
+}
+@page :right {
+  margin-left: 4cm;
+  margin-right: 2cm;
+}
+```
+
+## break 分頁斷點
+
+相關屬性有三個，皆為分頁斷點設定，分別在是在元素本身、元素前、元素後插入分頁斷點。
+
+分新舊寫法但目前瀏覽器保留舊寫法並會將舊寫法轉為新寫法。
+
+| 新寫法 | 舊寫法 | 說明 |
+| `break-inside` | `page-break-inside` | 元素本身 |
+| `break-before` | `page-break-before` | 元素前 |
+| `break-after` | `page-break-after` | 元素後 |
+
+### break-inside 元素本身斷點
+
+| `break-inside`(新) | `page-break-inside`(舊) | 說明 |
+| auto | auto | 預設，如果需要則會在元素內插入分頁斷點 |
+| avoid | avoid | 避免在元素內插入分頁斷點 |
+
+### break-before 元素前斷點
+
+| `break-before`(新) | `page-break-before`(舊) | 說明 |
+| auto | auto | 預設，如果需要則會在元素前插入分頁斷點 |
+| avoid | avoid | 避免在元素前插入分頁斷點 |
+| page | always | 在元素前總是插入分頁斷點 |
+| left | left | 在元素前插入分頁斷點直到它到達一個左手頁面 |
+| right | right | 在元素前插入分頁斷點直到它到達一個右手頁面 |
+
+### break-after 元素後斷點
+
+| `break-after`(新) | `page-break-after`(舊) | 說明 |
+| auto | auto | 預設，如果需要則會在元素後插入分頁斷點 |
+| avoid | avoid | 避免在元素後插入分頁斷點 |
+| page | always | 在元素後總是插入分頁斷點 |
+| left | left | 在元素後插入分頁斷點直到到達一個左手頁面 |
+| right | right | 在元素後插入分頁斷點直到到達一個右手頁面 |
+
+常用於一個`<div>`要自己一頁的需求，可以設置如下：
+
+```html
+<html>
+  <style>
+    div.page{
+      break-after: page;
+    }
+    /* 如果不設置，最後一區塊後面會多出一個空白頁 */
+    div.page:last-child{
+      break-after: auto;
+    }
+  </style>
+  <body>
+    <div class="page">我自己一頁</div>
+    <div class="page">我自己一頁</div>
+  </body>
+</html>
+```
+
+# 列印遇到的一些坑
+
+## 印不出顏色
+
+### 主流瀏覽器
+
+可在元素上設定`color-adjust`屬性即可(IE無效)：
+
+```css
+.colorElement{
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+```
+
+或者想要在列印模式下全部元素都有顏色，就狠一點一次來：
+
+```css
+@media print{
+  /* 列印時專用樣式 */
+  *{
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}
+```
+
+### 尊爵不凡IE
+
+請自行去瀏覽器中設定，這邊示範IE11流程：
+
+1. 點擊右上角齒輪符號的「工具」（或按下`Alt`+`X`）
+2. 點擊「列印」
+3. 點擊「設定列印格式」
+![IE開啟列印色彩(工具>列印>設定列印格式)][IE_COLOR1]
+4. 出現「設定列印格式」視窗後，在左上角紙張選項中，勾選起「列印背景色彩與影像」即可
+![勾選起「列印背景色彩與影像」][IE_COLOR2]
+
+[IE_COLOR1]:{{site.url}}/img/2020-03-13-print-div/IE_COLOR1.png "IE開啟列印色彩(工具>列印>設定列印格式)"
+[IE_COLOR2]:{{site.url}}/img/2020-03-13-print-div/IE_COLOR2.png "勾選起「列印背景色彩與影像」"
+
+## IE的表格沒框線
+
+正當我興高采烈的用IE列印時...
+
+![IE中沒格線][IE_no_border]
+
+某幾格怎麼沒有線？？？？
+
+一查發現，如果你不幸的要兼容IE大大，在IE上列印超過一頁時，`<table>`內有使用`rowspan`的格子 **border會消失不見**。
+
+最好的解決方式就是不要使用`rowspan`，但說真的某些表格不用`rowspan`真的很醜或很奇怪...
+
+我自己專案是情況是沒辦法不用`rowspan`，所以改用底色去區隔格子與格子之間，不過也不是所有情況都適用，況且有人不喜歡列印時有底色怕會浪費墨水...
+
+![IE格線替代方案][IE_change]
+
+網路上有些教學是使用絕對定位的元素蓋在上面，或是什麼把上下連結部分的線用`border-color: transparent;`給隱藏掉... 做出來的效果可以自己去看看你滿不滿意囉。
+
+只能說，珍惜生命，遠離IE吧。
+
+[IE_no_border]:{{site.url}}/img/2020-03-13-print-div/IE_no_border.png "IE中有使用rowspan的格子會沒格線"
+[IE_change]:{{site.url}}/img/2020-03-13-print-div/IE_change.png "IE中有使用rowspan的格子會沒格線"
+
+## 想要自訂頁碼
+
+先說我自己沒試過，不過看到網路上有[相關範例](https://stackoverflow.com/questions/15797161/browser-support-for-css-page-numbers/)就放上來。
