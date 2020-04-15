@@ -4,7 +4,7 @@ title:  "無須套件！瀏覽器列印特定區塊"
 date:   2020-03-13 18:00:00 +0800
 categories:
 - Program
-tags: Html jquery print 列印
+tags: Html jQuery print 列印
 description: 使用瀏覽器內建列印功能來列印特定區塊吧！
 ---
 
