@@ -12,7 +12,7 @@ description: 讓textarea根據設定與輸入內容自動調整高度！
 
 [Autosize](http://www.jacklmoore.com/autosize/)是個相當輕量小巧的套件，用於讓textarea根據設定與輸入內容自動調整高度，使用簡單上手迅速呦。
 
-此套件作者為[Jack Moore](https://github.com/jackmoore)，，在此由衷感謝Jack Moore大大的分享奉獻。
+此套件作者為[Jack Moore](https://github.com/jackmoore)，在此由衷感謝Jack Moore大大的分享奉獻。
 
 # 下載
 

@@ -56,3 +56,34 @@ $jekyll-config-map : {{ config_map }};
 code{
   margin: 0 4px;
 }
+input[type="text"]{
+  padding: 6px 8px;
+  border: 1px #AAA solid;
+  border-radius: 4px;
+  &:focus{
+    outline: 0;
+    box-shadow: 0 0 0 3px #90d9f0;
+  }
+}
+button{
+  padding: 8px 12px;
+  border: 1px #AAA solid;
+  border-radius: 4px;
+  line-height: 1;
+  &:focus{
+    outline: 0;
+    box-shadow: 0 0 0 3px #90d9f0;
+  }
+}
+.exampleShow{
+  margin: 20px 0;
+  padding: 20px;
+  background: #f9f9f9;
+  &::before{
+    content: '玩一下執行結果吧  (●`ω ´●)';
+    display: block;
+    margin-bottom: 15px;
+    color: #BBB;
+    letter-spacing: 1px;
+  }
+}
