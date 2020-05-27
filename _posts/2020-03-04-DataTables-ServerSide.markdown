@@ -8,9 +8,11 @@ tags: DataTables ServerSide
 description: DataTables之ServerSide屬性筆記。
 ---
 
+###### 最後修改日期｜May 21, 2020
+
 # DowYuu言
 
-[DataTables][https://datatables.net/]在載入資料時有很多不同方法，像是直接以HTML的`<table>`啟動、以`ajax`載入...等，而這些方法皆是一次撈回所有的資料，對於巨量資料而言不是個好做法，因此才有了`ServerSide`屬性。
+[DataTables](https://datatables.net/)在載入資料時有很多不同方法，像是直接以HTML的`<table>`啟動、以`ajax`載入...等，而這些方法皆是一次撈回所有的資料，對於巨量資料而言不是個好做法，因此才有了`ServerSide`屬性。
 
 # ServerSide用法
 
@@ -30,6 +32,6 @@ $(document).ready(function() {
 
 設置後會使得各種操作像是「切換頁」、「選擇每頁資料數」、「排序」、「查詢」...等等，都會再一次的去後端撈資料回來顯示，對巨量資料而言是較佳的做法。
 
-更多屬性設置可以看[官方ServerSide範例][https://datatables.net/examples/server_side/]。
+更多屬性設置可以看[官方ServerSide範例](https://datatables.net/examples/server_side/)。
 
 完畢灑花<3
