@@ -15,15 +15,15 @@ description: HTML5新標籤，讓選單可用文字輸入方式篩選出其中�
 
 # DowYuu言
 
-我原先是在[Angular Material](https://material.angular.io/components/autocomplete/overview)中看到這個功能的，對於選項非常多的選單而言用起來相當舒服，用一般的下拉選單到底是要拉到民國幾年啦XD
+我原先是在[Angular Material](https://material.angular.io/components/autocomplete/overview){:target="_blank"}中看到這個功能的，對於選項非常多的選單而言用起來相當舒服，用一般的下拉選單到底是要拉到民國幾年啦XD
 
 到了非`Angular`的案子中，想說來找找有沒有類似的套件可以用，意外的發現了HTML5的新標籤`<datalist>`，欣喜若狂呀。
 
 # 瀏覽器支援
 
-為HTML5的新標籤，支援表[在此](https://caniuse.com/#search=datalist)，IE10+，在寫文章的今天大多的瀏覽器都已經有支援咯。
+為HTML5的新標籤，支援表[在此](https://caniuse.com/#search=datalist){:target="_blank"}，IE10+，在寫文章的今天大多的瀏覽器都已經有支援咯。
 
-若是要支援更低版本的IE，可以試試[jQuery UI中的Autocomplete](https://jqueryui.com/autocomplete/)。
+若是要支援更低版本的IE，可以試試[jQuery UI中的Autocomplete](https://jqueryui.com/autocomplete/){:target="_blank"}。
 
 # 使用
 
@@ -61,14 +61,14 @@ HTML：
 執行結果可以看到，只要有輸入關鍵字，下方就會跳出對應的選項。只要點了選項，上方輸入格的值就會被設定進去。  
 而不點選項的話也可以隨意輸入，不像`<select>`一定只能選擇裡面的選項。
 
-## 偽裝<select>第一步：限制只能輸入選項內容
+## 偽裝select第一步：限制只能輸入選項內容
 
 這時候你會想，能不能像`<select>`一樣，限制一定只能輸入裡面的選項呢？
 
 實際開發上或許會遇到，我要能用關鍵字找選項，也要只輸入裡面的選項，這時候可以用JS進行改良。
 
 這邊的JS參考了[Stephan Muller
-](https://stackoverflow.com/users/124238/stephan-muller)在[stackoverflow問題中的回答](https://stackoverflow.com/questions/29882361/show-datalist-labels-but-submit-the-actual-value)，感謝大大的分享，如果要純Javascript寫法可以參考連結中的寫法，下面的範例中我改成jQuery的寫法了。
+](https://stackoverflow.com/users/124238/stephan-muller){:target="_blank"}在[stackoverflow問題中的回答](https://stackoverflow.com/questions/29882361/show-datalist-labels-but-submit-the-actual-value){:target="_blank"}，感謝大大的分享，如果要純Javascript寫法可以參考連結中的寫法，下面的範例中我改成jQuery的寫法了。
 
 HTML：
 ```html
@@ -135,7 +135,7 @@ HTML：
   <span id="msg1"></span>
 </div>
 
-## 偽裝<select>第二步：讓選項顯示文字與實際選取值不同
+## 偽裝select第二步：讓選項顯示文字與實際選取值不同
 
 又思考了一下，在`<select>`中`<option>`顯示的文字和其`value`屬性可以是不同值並且取值時是取得`value`屬性中的值，那`<datalist>`呢？
 
@@ -166,7 +166,7 @@ HTML：
 
 在Chrome（版本 81.0.4044.138，64位元）中，在選項中可以同時看到設置的`value`屬性值和其設置文字，並被給上了美美的樣式，並且點了選項後依舊可以同時看到設置的`value`屬性值「0」和其設置文字「馬來貘」。
 
-![Chrome中表現，可同時看到設置的value屬性值和其設置文字]({{site.url}}/img/2020-05-27-Input-Datalist/datalist_option_value_chrome.png)  
+![Chrome中表現，可同時看到設置的value屬性值和其設置文字]({{site.url}}/img/2020-05-27-Input-Datalist/datalist_option_value_Chrome.png)  
 
 而在IE11（版本11.836.18362.0）中，在選項中僅能看到設置文字，但點下選項後，可以在輸入格中看到該值原本的設置文字「馬來貘」。
 
