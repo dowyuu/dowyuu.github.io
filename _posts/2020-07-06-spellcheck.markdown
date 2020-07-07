@@ -53,7 +53,7 @@ HTML：
 
 # 瀏覽器支援 Browser compatibility
 
-為HTML5的新標籤，支援表[在此](https://caniuse.com/#search=spellcheck){:target="_blank"}，IE10+，在寫文章的今天大多的瀏覽器都已經有支援咯。
+為HTML5的新標籤，支援表[在此](https://caniuse.com/#search=spellcheck)，IE10+，在寫文章的今天大多的瀏覽器都已經有支援咯。
 
 # 使用
 
@@ -131,5 +131,5 @@ HTML：
 
 本筆記內容參考：
 
-* [MDN web docs－spellcheck](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/spellcheck){:target="_blank"}
-* [Ｗ3school－HTML spellcheck Attribute](https://www.w3schools.com/tags/att_global_spellcheck.asp){:target="_blank"}
+* [MDN web docs－spellcheck](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/spellcheck)
+* [Ｗ3school－HTML spellcheck Attribute](https://www.w3schools.com/tags/att_global_spellcheck.asp)

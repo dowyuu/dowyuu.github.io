@@ -25,7 +25,7 @@ description: 本篇為對「瀏覽器排版引擎模式」、「IE文件模式�
 就是前面所指的舊有網頁，在怪異模式下，排版會模擬Navigator 4與Internet Explorer 5的「非標準」行為。  
 若網頁的DOCTYPE格式錯誤也會進入怪異模式／接近標準模式。
 
-怪異模式行為請參考[此列表](https://developer.mozilla.org/en-US/docs/Mozilla/Mozilla_quirks_mode_behavior){:target="_blank"}。
+怪異模式行為請參考[此列表](https://developer.mozilla.org/en-US/docs/Mozilla/Mozilla_quirks_mode_behavior)。
 
 ## 標準模式（Standards mode）
 
@@ -34,7 +34,7 @@ HTML與CSS表現與W3C規範相同。
 ## 接近標準模式（Almost standards mode）
 
 顧名思義就是接近標準模式了，但還是有少部分行為同怪異模式。
-接近標準模式行為參考[此列表](https://developer.mozilla.org/zh-TW/docs/Mozilla/Gecko_Almost_Standards_Mode){:target="_blank"}。
+接近標準模式行為參考[此列表](https://developer.mozilla.org/zh-TW/docs/Mozilla/Gecko_Almost_Standards_Mode)。
 
 ## 以JS檢測瀏覽器排版引擎模式（compatMode）
 
@@ -78,7 +78,7 @@ document.compatMode
 先說「ie=edge」，這是指以目前可行之最高版本的意思，你使用IE9運行就會用IE9的模式下去運作，使用IE11運行就會用IE11的模式下去運作，不用出了新版本IE就一直加一直換。
 
 而下方一行為什麼有「chrome=1」這東西呢？
-因為在IE6-IE9上為了使用者有更快、更安全的使用體驗且令其支援HTML5，發展出了 **外掛程式** [Google Chrome Frame](https://zh.wikipedia.org/wiki/Google_Chrome_Frame){:target="_blank"}（Google Chrome內嵌框架，簡稱GCF），讓可以用著IE的皮，Chrome的Webkit、V8引擎內在。  
+因為在IE6-IE9上為了使用者有更快、更安全的使用體驗且令其支援HTML5，發展出了 **外掛程式** [Google Chrome Frame](https://zh.wikipedia.org/wiki/Google_Chrome_Frame)（Google Chrome內嵌框架，簡稱GCF），讓可以用著IE的皮，Chrome的Webkit、V8引擎內在。  
 若使用者有安裝GCF，且使用的IE8（含）以下，該代碼會自動引導瀏覽器啟用外掛程式進行排版及運算。
 
 不過畢竟經過時代的進行，IE10也開始支援HTML5，該項目就在2014年停止維護了。
@@ -113,7 +113,7 @@ document.documentMode
 
 文件類型，**必須放在網頁頁面的最頂端（第一行）**，若DOCTYPE前有任何語句（包含註解），在IE9（含）以下的IE都會觸發[怪異模式](#怪異模式quirks-mode)。
 
-而DOCTYPE若書寫格式錯誤也會使網頁進入怪異模式或接近標準模式，各種DOCTYPE寫法觸發之瀏覽器排版引擎模式對照表請看[此表](https://zh.wikipedia.org/wiki/%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F#%E6%96%87%E6%A1%A3%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83){:target="_blank"}。
+而DOCTYPE若書寫格式錯誤也會使網頁進入怪異模式或接近標準模式，各種DOCTYPE寫法觸發之瀏覽器排版引擎模式對照表請看[此表](https://zh.wikipedia.org/wiki/%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F#%E6%96%87%E6%A1%A3%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83)。
 
 ## HTML5
 
@@ -156,8 +156,8 @@ document.documentMode
 
 本筆記內容參考：
 
-* [MDN web docs－怪異模式與標準模式](https://developer.mozilla.org/zh-TW/docs/Web/HTML/Quirks_Mode_and_Standards_Mode){:target="_blank"}
-* [Ｗ3school－HTML <!DOCTYPE>標籤](https://www.w3school.com.cn/tags/tag_doctype.asp){:target="_blank"}
-* [wiki－Google Chrome內嵌框架](https://zh.wikipedia.org/wiki/Google_Chrome_Frame){:target="_blank"}
-* [stackoverflow 問題](https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do){:target="_blank"}
-* [wiki－怪異模式](https://zh.wikipedia.org/wiki/%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F){:target="_blank"}
+* [MDN web docs－怪異模式與標準模式](https://developer.mozilla.org/zh-TW/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)
+* [Ｗ3school－HTML <!DOCTYPE>標籤](https://www.w3school.com.cn/tags/tag_doctype.asp)
+* [wiki－Google Chrome內嵌框架](https://zh.wikipedia.org/wiki/Google_Chrome_Frame)
+* [stackoverflow 問題](https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do)
+* [wiki－怪異模式](https://zh.wikipedia.org/wiki/%E6%80%AA%E5%BC%82%E6%A8%A1%E5%BC%8F)

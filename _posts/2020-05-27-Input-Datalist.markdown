@@ -15,15 +15,15 @@ description: HTML5新標籤，讓選單可用文字輸入方式篩選出其中�
 
 # DowYuu言
 
-我原先是在[Angular Material](https://material.angular.io/components/autocomplete/overview){:target="_blank"}中看到這個功能的，對於選項非常多的選單而言用起來相當舒服，用一般的下拉選單到底是要拉到民國幾年啦XD
+我原先是在[Angular Material](https://material.angular.io/components/autocomplete/overview)中看到這個功能的，對於選項非常多的選單而言用起來相當舒服，用一般的下拉選單到底是要拉到民國幾年啦XD
 
 到了非`Angular`的案子中，想說來找找有沒有類似的套件可以用，意外的發現了HTML5的新標籤`<datalist>`，欣喜若狂呀。
 
 # 瀏覽器支援
 
-為HTML5的新標籤，支援表[在此](https://caniuse.com/#search=datalist){:target="_blank"}，IE10+，在寫文章的今天大多的瀏覽器都已經有支援咯。
+為HTML5的新標籤，支援表[在此](https://caniuse.com/#search=datalist)，IE10+，在寫文章的今天大多的瀏覽器都已經有支援咯。
 
-若是要支援更低版本的IE，可以試試[jQuery UI中的Autocomplete](https://jqueryui.com/autocomplete/){:target="_blank"}。
+若是要支援更低版本的IE，可以試試[jQuery UI中的Autocomplete](https://jqueryui.com/autocomplete/)。
 
 # 使用
 
@@ -68,7 +68,7 @@ HTML：
 實際開發上或許會遇到，我要能用關鍵字找選項，也要只輸入裡面的選項，這時候可以用JS進行改良。
 
 這邊的JS參考了[Stephan Muller
-](https://stackoverflow.com/users/124238/stephan-muller){:target="_blank"}在[stackoverflow問題中的回答](https://stackoverflow.com/questions/29882361/show-datalist-labels-but-submit-the-actual-value){:target="_blank"}，感謝大大的分享，如果要純Javascript寫法可以參考連結中的寫法，下面的範例中我改成jQuery的寫法了。
+](https://stackoverflow.com/users/124238/stephan-muller)在[stackoverflow問題中的回答](https://stackoverflow.com/questions/29882361/show-datalist-labels-but-submit-the-actual-value)，感謝大大的分享，如果要純Javascript寫法可以參考連結中的寫法，下面的範例中我改成jQuery的寫法了。
 
 HTML：
 ```html

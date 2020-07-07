@@ -10,7 +10,7 @@ tags:
 description: 阿油的MarkDown語法筆記，讓你舒服排版的標記語言。
 ---
 
-###### 最後修改日期｜Feb 29, 2020
+###### 最後修改日期｜Jul 07, 2020
 
 # DowYuu言
 因為Jekyll的關係而接觸了`Markdown`，因此想說稍微記錄一下`Markdown`的用法。  
@@ -79,22 +79,24 @@ This is an H2
 分三種：「行內鏈結」（簡易）、「參照鏈結」（整齊）、「自動鏈結鏈結」（懶(X)）。
 
 ## 行內鏈結
-格式為`[顯示的文字](鏈結網址 "title")`，網址與title中間須有空格，鏈結網址也可以是相對路徑的本機檔案。
+格式為`[顯示的文字](鏈結網址 "title")`，title可省略，網址與title中間須有空格，鏈結網址也可以是相對路徑的本機檔案。
 
-若要設置`target=_blank`，可在後方加上`{:target="_blank"}`或直接使用html寫法。
+因為本站有裝套件所以鏈結都會另開新視窗，不然 **預設是不會另開新視窗的**。若要設置`target=_blank`，可在後方加上`{:target="_blank"}`或直接使用html寫法。
+
+附上`jekyll`用之`<a>`元素設置`target=_blank`（另開新視窗）套件－[jekyll-target-blank](https://github.com/keithmifsud/jekyll-target-blank)，裝了一勞永逸，給你滿滿的新視窗。
 
 輸入：
 ```ruby
-[Google](https://www.google.com/ "This is Google")  
-[DowYuu's Photo]({{site.url}}/img/2020-02-10-MarkDownNote/DowYuu.png "This is DowYuu's  Photo")  
-[GoogleBlank](https://www.google.com/ "This is Google"){:target="_blank"}
+[Google](https://www.google.com/)  
+[DowYuu的照片]({{site.url}}/img/2020-02-10-MarkDownNote/DowYuu.png "這是DowYuu的照片")  
+[GoogleBlank](https://www.google.com "This is Google"){:target="_blank"}
 ```
 
 解析為：
 
-[Google](https://www.google.com/ "This is Google")  
-[DowYuu's Photo]({{site.url}}/img/2020-02-10-MarkDownNote/DowYuu.png "This is DowYuu's  Photo")  
-[GoogleBlank](https://www.google.com/ "This is Google"){:target="_blank"}_
+[Google](https://www.google.com/)  
+[DowYuu的照片]({{site.url}}/img/2020-02-10-MarkDownNote/DowYuu.png "這是DowYuu的照片")  
+[GoogleBlank](https://www.google.com "This is Google")
 
 ## 參照鏈結
 格式為`[顯示的文字][識別碼]`（中間可有空格），並在他處以`[識別碼]:網址 "title"`形式設定。
@@ -103,7 +105,7 @@ This is an H2
 <img src="{{site.url}}/img/2020-02-10-MarkDownNote/a.png" alt="參照鏈結" title="查表對照" style="border:1px #DDD solid;" />
 
 - 識別碼**不分大小寫且可為空**（識別碼為空時，識別碼＝顯示的文字），識別碼可為多個文字。  
-- 網址部分可用`<>`包覆。  
+- 網址部分可用`<>`包覆，但`<`、`>`與網址間**不能有空隙**，否則新版`jekyll`會有URL解析錯誤：`bad URI(is not URI?)`。  
 - title可用`""`、`''`包覆，且可摺到下一行去。
 
 識別碼設置列須為獨立區塊，多個識別碼設置列可放一起。
@@ -119,8 +121,8 @@ This is an H2
 [doNotBeSameRow]:https://www.google.com/
 
 [google-web]:https://www.google.com/ "This is Google"
-[Google2]:<https://www.google.com/ > 'This is Google2'
-[google-web3]:<https://www.google.com/ >
+[Google2]:<https://www.google.com/> 'This is Google2'
+[google-web3]:<https://www.google.com/>
               "This is Google3"
 [I am Google!]:https://www.google.com/ "This is Google"
 ```
@@ -135,8 +137,8 @@ This is an H2
 [doNotBeSameRow]:https://www.google.com/
 
 [google-web]:https://www.google.com/ "This is Google"
-[Google2]:<https://www.google.com/ > 'This is Google2'
-[google-web3]:<https://www.google.com/ >
+[Google2]:<https://www.google.com/> 'This is Google2'
+[google-web3]:<https://www.google.com/>
               "This is Google3"
 [I am Google!]:https://www.google.com/ "This is Google"
 
