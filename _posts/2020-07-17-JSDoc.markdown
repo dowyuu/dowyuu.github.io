@@ -88,14 +88,14 @@ function getBookPrice(id) {
 @returns {number} // 單一回傳型別
 @returns {(string|false)} // 回傳string型別或false
 @returns {boolean} - 是否參加活動 // 回傳boolean型態，且有參數簡述，連字符號非必加
- ```
+```
 
- ---
+---
 
- 本筆記內容參考：
+本筆記內容參考：
 
- * [JSDoc 官方文件](https://jsdoc.app/index.html)
- * [JSDoc @param](https://jsdoc.app/tags-param.html)
- * [JSDoc @returns](https://jsdoc.app/tags-returns.html)
- * [stackoverflow－關於HTML DOM](https://stackoverflow.com/questions/21489044/how-can-i-mark-a-parameter-as-containing-a-dom-node-in-jsdoc)
- * [stackoverflow－關於jQuery物件](https://stackoverflow.com/questions/13610979/how-can-i-get-jsdoc-to-mark-my-param-as-a-jquery-object)
+* [JSDoc 官方文件](https://jsdoc.app/index.html)
+* [JSDoc @param](https://jsdoc.app/tags-param.html)
+* [JSDoc @returns](https://jsdoc.app/tags-returns.html)
+* [stackoverflow－關於HTML DOM](https://stackoverflow.com/questions/21489044/how-can-i-mark-a-parameter-as-containing-a-dom-node-in-jsdoc)
+* [stackoverflow－關於jQuery物件](https://stackoverflow.com/questions/13610979/how-can-i-get-jsdoc-to-mark-my-param-as-a-jquery-object)
