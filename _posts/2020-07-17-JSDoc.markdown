@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "JSDoc－格式正確交接方便"
+date:   2020-07-17 18:00:00 +0800
+categories:
+- Program
+tags: JavaScript JSDoc
+description: 註釋寫對格式，讓你交接系統更方便，再也不用受前（？）公司其他工程師的叨擾！
+---
+
+# DowYuu言
+
+本篇僅記錄自己常用到的情境與寫法喔！
+
+# 基本寫法
+
+一定要以`/**`開頭。
+
+## 單行敘述
+
+```js
+/** 取得書本價格 */
+function getBookPrice(){
+
+}
+```
+
+## 多行敘述
+
+這邊只是假裝多行文字，不會需要這樣寫中文啦XD
+
+```js
+/**
+ * 取得
+ * 書本價格
+ */
+function getBookPrice(){
+
+}
+```
+
+## @param 傳入參數
+
+```js
+/**
+ * 取得書本價格
+ * @param {string} id - 書本的id
+ */
+function getBookPrice(id) {
+
+}
+```
+
+### 不同寫法
+
+```js
+@param id // 傳入參數：id
+@param {string} id // 傳入型別為string的參數：id
+@param {string} id - 書本的id // 同上，且有參數簡述，連字符號（前方一定要有一個空格）非必加但加了會使其更易讀
+```
+
+### 型別描述
+
+```js
+@param {string} age - 年齡 // 單一字串型別string
+@param {(string|number)} age - 年齡 // 為string或number型別
+@param {*} type // 為任何型別皆可
+@param {('add'|'edit')} mode - 設置模式 // 僅接受字串'add'或字串'edit'
+
+@param {Object[]} members - 本公司會員列表 // 型別為物件陣列，可詳細描述該物件之內容屬性
+@param {string} members[].name - 會員名稱 // 詳細描述陣列中該物件內容屬性
+@param {number} members[].age - 會員年齡
+
+@param {...number} numberPlus // 重複型別參數
+
+@param {string} [name] - 名稱（非必填） // 非必填參數
+@param {string} [name=DowYuu] - 名稱（非必填），預設為DowYuu // 帶預設值之非必填參數
+
+@param {HTMLElement} btn - 事件按鈕 // 按鈕HTML DOM
+@param {jQuery} $btn - 事件按鈕 // 按鈕jQuery物件
+```
+
+## @returns 回傳參數
+
+與[傳入參數](#param-傳入參數)部分類似，但不用描述回傳參數名稱，**僅描述型別和簡述**。
+
+```js
+@returns {number} // 單一回傳型別
+@returns {(string|false)} // 回傳string型別或false
+@returns {boolean} - 是否參加活動 // 回傳boolean型態，且有參數簡述，連字符號非必加
+ ```
+
+ ---
+
+ 本筆記內容參考：
+
+ * [JSDoc 官方文件](https://jsdoc.app/index.html)
+ * [JSDoc @param](https://jsdoc.app/tags-param.html)
+ * [JSDoc @returns](https://jsdoc.app/tags-returns.html)
+ * [stackoverflow－關於HTML DOM](https://stackoverflow.com/questions/21489044/how-can-i-mark-a-parameter-as-containing-a-dom-node-in-jsdoc)
+ * [stackoverflow－關於jQuery物件](https://stackoverflow.com/questions/13610979/how-can-i-get-jsdoc-to-mark-my-param-as-a-jquery-object)
