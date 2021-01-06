@@ -46,7 +46,7 @@ HTML：
 </datalist>
 ```
 
-<div class="exampleShow">
+<div class="example-show">
   <span>選擇你最喜歡的動物：</span>
   <input type="text" id="input0" list="options0">
   <datalist id="options0">
@@ -121,7 +121,7 @@ function verifiDatalist(inputId){
 ```
 
 HTML：
-<div class="exampleShow">
+<div class="example-show">
   <span>選擇你最喜歡的動物：</span>
   <input type="text" id="input1" list="options1">
   <datalist id="options1">
@@ -152,7 +152,7 @@ HTML：
 </datalist>
 ```
 
-<div class="exampleShow">
+<div class="example-show">
   <span>選擇你最喜歡的動物：</span>
   <input type="text" id="input2" list="options2">
   <datalist id="options2">
@@ -238,7 +238,7 @@ function verifiDatalist(inputId){
 }
 ```
 
-<div class="exampleShow">
+<div class="example-show">
   <span>選擇你最喜歡的動物：</span>
   <input type="hidden" id="input3">
   <input type="text" id="input3_show" list="options3">

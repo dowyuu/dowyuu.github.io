@@ -35,7 +35,7 @@ HTML：
 </div>
 ```
 
-<div class="exampleShow">
+<div class="example-show">
   <div>
     <input type="text" value="aa123">
     <textarea rows="3">aa123</textarea>
@@ -78,7 +78,7 @@ HTML：
 <div contenteditable="true" spellcheck="true">可編輯元素有拼字檢查：aaa123</div>
 ```
 
-<div class="exampleShow">
+<div class="example-show">
   <div class="block" spellcheck="true">非編輯元素沒有拼字檢查：aaa123</div>
   <div class="block"  contenteditable="true" spellcheck="true">可編輯元素有拼字檢查：aaa123</div>
 </div>
@@ -104,7 +104,7 @@ HTML：
 </div>
 ```
 
-<div class="exampleShow">
+<div class="example-show">
   <div spellcheck="false">
     <input type="text" value="aa123">
     <textarea rows="3">aa123</textarea>
