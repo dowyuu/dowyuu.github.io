@@ -92,3 +92,36 @@ button{
     letter-spacing: 1px;
   }
 }
+
+#comments{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+#gitalk-container{
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+// applause
+
+.applause{
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 40px;
+}
+applause-button{
+  width: 64px;
+  height: 64px;
+}
+applause-button .style-root{
+  fill: #073790 !important;
+  stroke: #073790 !important;
+  color: #073790 !important;
+}
+applause-button .count-container {
+  top: -56% !important;
+  font-weight: bold;
+  color: #6190e8;
+}
