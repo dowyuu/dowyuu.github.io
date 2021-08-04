@@ -8,6 +8,8 @@ tags: Node.js Express Express.js JavaScript
 description: 關於Node.js Express的小小筆記。
 ---
 
+###### 最後修改日期｜Aug 04, 2021
+
 # DowYuu言
 
 我來掃一下這裡積了半年的灰塵了，咳咳。
@@ -232,11 +234,11 @@ script(src='/swal/sweetalert2.min.js')
 
 # Router取得傳入參數
 
-| 取得參數 | 使用語法 | 範例 | 取得 |
-| ------------ | ----------- |  ----- |  ----- |
-| `form`中的輸入格 | req.body.<該元件的name> | `<input type="text" name="account" >` | req.body.account |
-| `網址`中帶的參數 | req.params.<參數> | app.get('/log/:date', ...) | req.params.date |
-| `$.ajax`中帶的data | req.query.<data中的key> | $.ajax中的data:{ date: '2021.01.01' } | req.query.date |
+| 取得參數 | 使用語法 | 範例 | 取得 | 備註 |
+| ------------ | ----------- |  ----- |  ----- |  ----- |
+| `網址`中帶的參數 | req.params.<參數> | app.get('/log/:date', ...) | req.params.date |  |
+| `$.ajax`中帶的data | req.query.<data中的key> | $.ajax中的data:{ date: '2021.01.01' } | req.query.date |  |
+| `form`中的輸入格 | req.body.<該元件的name> | `<input type="text" name="account" >` | req.body.account | 使用套件multer |
 
 ```javascript
 // in Router
@@ -276,6 +278,31 @@ router.post('/login', function(req, res) {
 ```
 
 [Router參考](http://expressjs.com/zh-tw/api.html#router)
+
+# ajax 回傳
+
+```javascript
+// in Router
+var express = require('express');
+var router = express.Router();
+
+router.get('/getResult', function(req, res, next){
+  let data = {
+    'result': 'success'
+  };
+  res.send(data);
+});
+
+// in 前端
+$.ajax({
+  url: '/getResult',
+  type: 'get',
+  dataType: 'json',
+  success: function(data){
+    console.log(data); // { 'result': 'success' }
+  }
+});
+```
 
 # 在javascript中帶入jade參數
 
