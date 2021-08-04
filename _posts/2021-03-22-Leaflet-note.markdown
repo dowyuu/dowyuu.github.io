@@ -8,7 +8,7 @@ tags: Leaflet JavaScript jQuery
 description: 關於Leaflet的小小筆記。
 ---
 
-###### 最後修改日期｜Mar 22, 2021
+###### 最後修改日期｜Aug 04, 2021
 ###### 撰文時版本　｜1.7.1
 
 # DowYuu言
@@ -105,9 +105,9 @@ map.getBounds(); // 回傳東北點及西南點的座標
 
 ```js
 map.on('click', function(e){
-  var coord = e.latlng;
-  var lat = coord.lat;
-  var lng = coord.lng;
+  let coord = e.latlng,
+      lat = coord.lat,
+      lng = coord.lng;
   console.log('latitude（緯度）', lat);
   console.log('longitude（經度）', lng);
 });
@@ -271,7 +271,7 @@ map.addLayer(m);
 預設的`Marker`會是一個藍色的icon，這邊也可以用圖片自訂。
 
 ```js
-var greenIcon = L.icon({
+let greenIcon = L.icon({
     iconUrl: 'leaf-green.png',
     shadowUrl: 'leaf-shadow.png',
 
@@ -583,6 +583,8 @@ windLayer.setData(windData);
 
 ## Leaflet-Ruler－地圖量測
 
+###### 撰文時版本｜無
+
 ![Leaflet-Ruler 展示]({{site.url}}/img/2021-03-22-Leaflet-note/demo_Leaflet-Ruler.png "Leaflet-Ruler 展示")
 
 [Leaflet-Ruler](https://github.com/gokertanrisever/leaflet-ruler)，簡易的地圖量測工具。
@@ -652,4 +654,121 @@ L.control.ruler(rulerOption).addTo(map);
 .leaflet-ruler-clicked{
   border-color: #d81111 !important;
 }
+```
+
+## Leaflet.Photo－照片標點
+
+###### 撰文時版本｜無
+
+![Leaflet.Photo 展示]({{site.url}}/img/2021-03-22-Leaflet-note/demo_Leaflet.Photo.png "Leaflet.Photo 展示")
+
+[Leaflet.Photo](https://github.com/turban/Leaflet.Photo)，好看的地圖照片標點，支援群聚展開縮起。
+
+```js
+// 預設資料格式
+let data = [
+  {
+    lat: 22.61828436781493, // 緯度
+    lng: 120.29206931591035, // 經度
+    url: 'img/0.jfif', // 原圖url
+    caption: '<div class="caption">高雄海洋流行音樂中心</div><div class="photo-by">Photo By Nick  Valmores</div>', // 照片標題
+    thumbnail: 'thumbnail/0.jfif', // 縮圖url
+    video: '' // 影片檔
+  },
+  {
+    lat: 25.033821475206487,
+    lng: 121.56453609466554,
+    url: 'img/1.jpeg',
+    caption: '<div class="caption">臺北101</div><div class="photo-by">Photo By Timo Volz</div>',
+    thumbnail: 'thumbnail/1.jpeg',
+    video: ''
+  },
+  ...
+];
+
+// 程式
+
+// 照片圖層事件綁定
+// 事件綁定內容可自行修改，此處放的是官方範例（點擊會跳出Popup）
+let photoLayer = L.photo.cluster().on('click', function(evt){
+  let photo = evt.layer.photo, // 該圖片資料物件
+      template = '<img src="{url}" class="img-preview"/>{caption}';
+
+  // 若有設置video則會使用影片，我個人沒試過影片
+  if (photo.video && (!!document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2'))) {
+    template = '<video autoplay controls poster="{url}" class="video-preview"><source src="{video}" type="video/mp4"/></video>';
+  };
+
+  evt.layer.bindPopup(L.Util.template(template, photo), {
+    className: 'leaflet-popup-photo',
+    minWidth: 300
+  }).openPopup();
+
+});
+
+// 清除照片圖層中的所有Layer
+photoLayer.clear();
+
+// 將資料加入照片圖層，並加入地圖
+photoLayer.add(data).addTo(map);
+
+```
+
+## Leaflet.Sync－地圖同步
+
+###### 撰文時版本｜0.2.4
+
+![Leaflet.Sync 展示]({{site.url}}/img/2021-03-22-Leaflet-note/demo_Leaflet.Sync.png "Leaflet.Sync 展示")
+
+[Leaflet.Sync](https://github.com/jieter/Leaflet.Sync)，方便的地圖定位同步工具。
+
+只要設定定位同步，當`map1`定位變動時，`map2`也會跟著一起定位變動。但要注意，此時`map2`移動，`map1`不會跟著移動（互相同步請看下個範例）。
+```js
+let option = { // 可省略
+  noInitialSync: true, // 禁用地圖的初始同步
+  syncCursor: true, // 當滑鼠在地圖上滑動，同步的地圖上也會顯示一個圓形標點來標記滑鼠的點位
+  offsetFn: function (center, zoom, refMap, tgtMap){ // 計算中心偏移量的函數
+    return center;
+  }
+};
+map1.sync(map2, option);
+```
+
+如果要**互相**定位同步（當`map1`移動`map2`會跟著移動，當`map2`移動`map1`會跟著移動），則要綁定兩次：
+```js
+map1.sync(map2);
+map2.sync(map1);
+```
+
+以下是範例圖片的程式：
+
+HTML：
+```html
+<div id="map1"></div>
+<div id="map2"></div>
+```
+js：
+```js
+let center = [23.604799, 120.7976256];
+let layer1 = L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+  maxNativeZoom: 20,
+  maxZoom: 20
+});
+let layer2 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+let map1 = L.map('map1', {
+    layers: [layer1],
+    center: center,
+    zoom: 7
+});
+let map2 = L.map('map2', {
+    layers: [layer2],
+    center: center,
+    zoom: 7
+});
+
+map1.sync(map2);
+map2.sync(map1);
+
 ```
