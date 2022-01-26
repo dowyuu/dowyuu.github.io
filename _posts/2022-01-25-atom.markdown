@@ -1,0 +1,264 @@
+---
+layout: post
+title:  "Atom－極度自由的文字編輯器"
+date:   2022-01-25 18:00:00 +0800
+categories:
+- Program
+tags: Atom TextEditor
+description: 主要是記錄一下自己的愛用套件。
+---
+
+# DowYuu言
+
+想當初入行時，學長推薦的`Sublime Text 3`這款編輯器。用著一段不是很認真的時期(?)後，又是學長推薦了一套新的文字編輯器`Atom`，倒也不是因為`Sublime`不好用（畢竟不認真的我也沒用過多久_(:3 」∠ )_），只是單純想說這款比較新用看看，用著用著就到現在了。
+
+然後最近各種原因重灌電腦，每次都在重載套件，然後又一直在東想西想到底之前裝了什麼套件，所以想著來記錄一下自己的愛用套件，善待一下我的小腦袋瓜 (´•̥̥̥ω•̥̥̥` )
+
+# Atom
+
+`Atom`是由[GitHub](https://github.com/)開發的自由及開放原始碼的文字編輯器，具備相當高的自訂性，也有非常豐富的模組可使用。
+
+簡單安裝簡單使用，什麼套件都不裝也是個很能用的文字編輯器了，
+
+# 下載安裝
+
+前往[Atom官網](https://atom.io/)，官方很智能的會顯示對應你作業系統的下載版本，像用Win10的我就是跑出了Windows版本，點擊「Download」（下載）按鈕。
+
+![於官網下載Atom]({{site.url}}/img/2022-01-25-atom/download.png "於官網下載Atom")
+
+載完後點擊安裝檔，待安裝畫面跑完就好了，就是這麼簡單No。
+
+![點擊安裝檔，待安裝畫面跑完，即安裝完畢]({{site.url}}/img/2022-01-25-atom/installed.png "點擊安裝檔，待安裝畫面跑完，即安裝完畢")
+
+# 開始Atom之旅
+
+![開始Atom之旅]({{site.url}}/img/2022-01-25-atom/start.png "開始Atom之旅")
+
+## 套件與佈景主題安裝
+
+`File`（檔案）＞`Settings`（設定）＞`Install`（安裝）
+
+![「File」（檔案）＞「Settings」（設定）]({{site.url}}/img/2022-01-25-atom/settings.png "「File」（檔案）＞「Settings」（設定）")
+
+![「Install」（安裝）]({{site.url}}/img/2022-01-25-atom/install.png "「Install」（安裝）")
+
+此功能也可透過終端機輸入指令執行`apm install <package-name>`。
+
+在黃框處可輸入套件或佈景主題名稱進行查詢，點擊綠框處可以切換查詢套件（Packages）與佈景主題（Themes）。
+
+若無查詢，下方會顯示推薦套件，若有查詢，下面會顯示查詢結果，在對要下載的項目點擊「Install」（安裝）按鈕（紫框處）即可。
+
+懼怕英文的人可以先去裝個`atom-i18n`套件，進入套件設定後設定成繁體中文，操作步驟請見[如何修改Atom語言](#如何修改Atom語言)。
+
+## 目前安裝的套件與佈景主題列表
+
+開啟終端機執行`apm ls`，會列出`Built-in Atom Packages`（內建套件）與`Community Packages`（社群套件）。
+
+`Community Packages`部分的就是你自己安裝的套件，當然除了你自己安裝的外，一些有連帶關係而自動下載的套件也會列在此處。
+
+![目前安裝的套件與佈景主題列表]({{site.url}}/img/2022-01-25-atom/packages_list.png "目前安裝的套件與佈景主題列表")
+
+
+## 佈景主題設置
+
+`File`（檔案）＞`Settings`（設定）＞`Themes`（佈景主題）
+
+![「Themes」（佈景主題）]({{site.url}}/img/2022-01-25-atom/themes-0.png "「Themes」（佈景主題）")
+
+1. 於UI Theme（使用者介面佈景主題）（黃框處）點選想要更換的佈景主題，這裡使用`atom-material-ui`做為示範
+
+![點選要設置的佈景主題）]({{site.url}}/img/2022-01-25-atom/themes-1.png "點選要設置的佈景主題）")
+
+2. 點選後就煥然一新啦！
+
+![套用atom-material-ui佈景主題）]({{site.url}}/img/2022-01-25-atom/themes-2.png "套用atom-material-ui佈景主題")
+
+## 快捷鍵綁定－按了什麼快捷鍵會有什麼功能？
+
+`File`（檔案）＞`Settings`（設定）＞`Keybindings`（快捷鍵綁定）
+
+![「File」（檔案）＞「Settings」（設定）]({{site.url}}/img/2022-01-25-atom/Settings.png "「File」（檔案）＞「Settings」（設定）")
+
+![「Keybindings」（快捷鍵綁定）]({{site.url}}/img/2022-01-25-atom/keybindings.png "「Keybindings」（快捷鍵綁定）")
+
+此功能可查閱目前在`Atom`中，按了什麼快捷鍵會有什麼功能，在黃框處可輸入快捷鍵語法，可以過濾篩選項目。
+
+### 快捷鍵相衝？快捷鍵失效？
+
+有時候裝了套件並點了套件說明中的使用快捷鍵，會發現奇怪怎麼沒效？又或是做出了跟預想中完全不一樣的反應？
+
+那麼有大概率是快捷鍵相衝啦。
+
+裝越多套件越有快捷鍵相衝的問題，可以在「快捷鍵綁定」功能中也能查詢是哪些套件用了同樣的快捷鍵，才導致快捷鍵相衝沒作用。
+
+![快捷鍵相衝範例]({{site.url}}/img/2022-01-25-atom/keybindings_conflict-0.png "快捷鍵相衝範例")
+
+快捷鍵相衝問題解決：
+
+* 關閉其中一個套件，就可使另一套件正常運作（簡單粗暴(｡◕∀◕｡)）
+* 設置`keymap.cson`
+
+我自己也沒用過，所以這裡就請各位自行餵狗了。
+
+# 個人推薦套件
+
+## atom-easy-jsdoc
+[atom-easy-jsdoc](https://atom.io/packages/atom-easy-jsdoc)，可迅速的插入`jsdoc`註解。
+
+游標停至該function上方空白處，按`ctrl`-`shift`-`J`或`ctrl`-`shift`-`D`（這指令Windows版會和複製此行動作相衝），即可自動帶入輸入參數並產生模板。
+
+| 使用前 | 使用後 |
+| :--: | :--: |
+| ![atom-easy-jsdoc使用前]({{site.url}}/img/2022-01-25-atom/atom-easy-jsdoc-0.png "atom-easy-jsdoc使用前") | ![atom-easy-jsdoc使用後]({{site.url}}/img/2022-01-25-atom/atom-easy-jsdoc-1.png "atom-easy-jsdoc使用後") |
+
+## atom-beautify
+[atom-beautify](https://atom.io/packages/atom-beautify)，按`ctrl`-`alt`-`B`便會把你的 code 排列得整整齊齊，省去排版所浪費的時間，支援多種程式語言。
+
+| 使用前 | 使用後 |
+| :--: | :--: |
+| ![atom-beautify使用前]({{site.url}}/img/2022-01-25-atom/atom-beautify-0.png "atom-beautify使用前") | ![atom-beautify使用後]({{site.url}}/img/2022-01-25-atom/atom-beautify-1.png "atom-beautify使用後") |
+
+## emmet
+[emmet](https://atom.io/packages/emmet)，`Atom`版本的[Emmet](https://emmet.io/)，非常好用的Web開發工具，用不同指令可快速建構出`HTML`、`CSS`...等語法。
+
+使用上就是輸入完`Emmet`語法後，游標在其右方並按下`Ctrl`-`E`，即可生成程式。
+
+### Emmet語法
+
+這裡列出一些我自己常用的語法，詳細語法請見[詳細Emmet語法表](#詳細Emmet語法表)。
+
+#### HTML5程式範本
+
+語法為`!`。
+
+```html
+!
+
+<!-- ↓↓↓↓↓ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+| 原語法 | 按下Ctrl-E生成程式後 |
+| :--: | :--: |
+| ![原語法]({{site.url}}/img/2022-01-25-atom/emmet-0.png "原語法") | ![按下Ctrl-E生成程式後]({{site.url}}/img/2022-01-25-atom/emmet-1.png "按下Ctrl-E生成程式後") |
+
+#### 標籤
+
+語法為`<標籤名稱>`，部分標籤可有縮寫語法可用，縮寫語法請見[詳細Emmet語法表](#詳細Emmet語法表)。
+
+```html
+a
+main
+ifr
+
+<!-- ↓↓↓↓↓ -->
+
+<a href=""></a>
+<main></main>
+<iframe src="" frameborder="0"></iframe>
+```
+
+#### id和class
+
+「設置id」語法為 `#` + `<id名稱>`。
+
+「設置class」語法為 `.` + `<id名稱>`，多class可一直串連下去，如：.bbb.ccc。
+
+未指定標籤名稱則會生成`<div>`。
+
+```html
+#aaa.bbb
+span.bbb.ccc
+
+<!-- ↓↓↓↓↓ -->
+
+<div id="aaa" class="bbb"></div>
+<span class="bbb ccc"></span>
+```
+
+#### 子項目與多數與賦予順序值
+
+「生成子項」語法為 `父項` + `>` + `子項`。
+
+部分子項會有預設標籤，例如父項為`<ul>`，則子項若不指定標籤，則會生成`<li>`。
+
+「生成多數」語法為 `<項目>` + `*` + `<生成個數>`。
+
+「生成多數並賦予順序值」語法為 `<項目>` + `$` + `*` + `<生成個數>`，多個`$`字號會使賦予順序值前方補0。
+
+```html
+ul>li.item$*5
+div.part$$$$*2
+
+<!-- ↓↓↓↓↓ -->
+
+<ul>
+  <li class="item1"></li>
+  <li class="item2"></li>
+  <li class="item3"></li>
+  <li class="item4"></li>
+  <li class="item5"></li>
+</ul>
+<div class="part0001"></div>
+<div class="part0002"></div>
+```
+
+### 詳細Emmet語法表
+
+這裡有份寫得很易懂又詳細的語法範例－[Emmet備忘錄](https://docs.emmet.io/cheat-sheet/)，供大家參考。
+
+## atom-file-icons
+[atom-file-icons](https://atom.io/packages/atom-file-icons)，讓不同副檔名的檔案有不同的icon顯示。
+
+| 使用前 | 使用後 |
+| :--: | :--: |
+| ![atom-file-icons使用前]({{site.url}}/img/2022-01-25-atom/atom-file-icons-0.png "atom-file-icons使用前") | ![atom-file-icons使用後]({{site.url}}/img/2022-01-25-atom/atom-file-icons-1.png "atom-file-icons使用後") |
+
+## atom-i18n
+[atom-i18n](https://atom.io/packages/atom-i18n)，`Atom`的國際化（Internationalization，字太長取頭尾字母加上中間有18的字母，簡稱i18n）語言包，有很多語言可設定（但並不是每個語言都有翻譯完全），翻譯的只有基本介面，像是套件、佈景主題等就還是英文。
+
+### 如何修改Atom語言
+
+1. 於`File`（檔案）＞`Settings`（設定）＞`Install`（安裝）頁面中安裝完`atom-i18n`套件，點擊項目中的`Settings`（設定）按鈕  
+或是在`File`（檔案）＞`Settings`（設定）＞`Packages`（擴充套件）頁面中，找到`atom-i18n`套件，點擊項目中的`Settings`（設定）按鈕
+
+![在安裝頁面中安裝完atom-i18n套件，點擊項目中的「Settings」（設定）按鈕]({{site.url}}/img/2022-01-25-atom/atom-i18n-0.png "在安裝頁面中安裝完atom-i18n套件，點擊項目中的「Settings」（設定）按鈕")
+
+![在擴充套件頁面中找到atom-i18n套件，點擊項目中的「Settings」（設定）按鈕]({{site.url}}/img/2022-01-25-atom/atom-i18n-1.png "在擴充套件頁面中找到atom-i18n套件，點擊項目中的「Settings」（設定）按鈕")
+
+2. 進入套件設定頁面後，找到「Language」（語言）下拉選單
+
+![進入套件設定頁面後，找到「Language」（語言）下拉選單]({{site.url}}/img/2022-01-25-atom/atom-i18n-2.png "進入套件設定頁面後，找到「Language」（語言）下拉選單")
+
+3. 點選要更換的語言，我自己這裡是選繁體中文
+
+![點選要更換的語言]({{site.url}}/img/2022-01-25-atom/atom-i18n-3.png "點選要更換的語言")
+
+4. 會跳出要求重新載入`Atom`的按鈕，點下去
+
+![點擊重新載入按鈕]({{site.url}}/img/2022-01-25-atom/atom-i18n-4.png "點擊重新載入按鈕")
+
+5. 重新載入後的`Atom`就是嶄新的面貌啦
+
+![語言更換完成]({{site.url}}/img/2022-01-25-atom/atom-i18n-5.png "語言更換完成")
+
+## linter-jshint
+[linter-jshint](https://atom.io/packages/linter-jshint)，`JavaScript`原始碼偵錯工具，可以很方便揪出淺在的語法錯誤，依據不同程式語言可去下載對應版本的`linter`。
+
+| 使用前 | 使用後 |
+| :--: | :--: |
+| ![linter-jshint使用前]({{site.url}}/img/2022-01-25-atom/linter-jshint-0.png "linter-jshint使用前") | ![linter-jshint使用後]({{site.url}}/img/2022-01-25-atom/linter-jshint-1.png "linter-jshint使用後") |
+
+※註：`const`為宣告「常數」，不能重複指定值，也不能重複宣告。
