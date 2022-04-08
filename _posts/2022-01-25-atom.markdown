@@ -8,6 +8,8 @@ tags: Atom TextEditor
 description: 主要是記錄一下自己的愛用套件。
 ---
 
+###### 最後修改日期｜Apr 08, 2022
+
 # DowYuu言
 
 想當初入行時，學長推薦的`Sublime Text 3`這款編輯器。用著一段不是很認真的時期(?)後，又是學長推薦了一套新的文字編輯器`Atom`，倒也不是因為`Sublime`不好用（畢竟不認真的我也沒用過多久_(:3 」∠ )_），只是單純想說這款比較新用看看，用著用著就到現在了。
@@ -262,3 +264,33 @@ div.part$$$$*2
 | ![linter-jshint使用前]({{site.url}}/img/2022-01-25-atom/linter-jshint-0.png "linter-jshint使用前") | ![linter-jshint使用後]({{site.url}}/img/2022-01-25-atom/linter-jshint-1.png "linter-jshint使用後") |
 
 ※註：`const`為宣告「常數」，不能重複指定值，也不能重複宣告。
+
+## color-picker
+
+[color-picker](https://atom.io/packages/color-picker)，方便的顏色選擇器。
+
+### 如何使用Color Picker（色彩選取工具）
+
+1. 游標停留在色碼上，按快捷鍵`Alt`+`Ctrl`+`C`，或右鍵點選選單中的「Color Picker（色彩選取工具）」項目
+
+![游標停留在色碼上，按快捷鍵或右鍵點選選單中的「Color Picker（色彩選取工具）」項目]({{site.url}}/img/2022-01-25-atom/color-picker-0.jpg "游標停留在色碼上，按快捷鍵或右鍵點選選單中的「Color Picker（色彩選取工具）」項目")
+
+2. 即可開啟顏色選擇介面
+
+![即可開啟顏色選擇介面]({{site.url}}/img/2022-01-25-atom/color-picker-1.jpg "即可開啟顏色選擇介面")
+
+3. 在顏色選擇介面中，點選新顏色與色碼形式
+
+![在顏色選擇介面中，點選新顏色與色碼形式]({{site.url}}/img/2022-01-25-atom/color-picker-2.jpg "在顏色選擇介面中，點選新顏色與色碼形式")
+
+4. 點擊新顏色的色碼，即可替換原色碼
+
+![點擊新顏色的色碼，即可替換原色碼]({{site.url}}/img/2022-01-25-atom/color-picker-3.jpg "點擊新顏色的色碼，即可替換原色碼")
+
+## pigments
+
+[pigments](https://atom.io/packages/pigments)，顯示文件中的色碼顏色。
+
+| 使用前 | 使用後 |
+| :--: | :--: |
+| ![pigments使用前]({{site.url}}/img/2022-01-25-atom/pigments-0.jpg "pigments使用前") | ![pigments使用後]({{site.url}}/img/2022-01-25-atom/pigments-1.jpg "pigments使用後") |
