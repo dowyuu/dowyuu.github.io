@@ -67,11 +67,11 @@ description: 主要是記錄一下自己的愛用套件。
 
 ![「Themes」（佈景主題）]({{site.url}}/img/2022-01-25-atom/themes-0.png "「Themes」（佈景主題）")
 
-1. 於UI Theme（使用者介面佈景主題）（黃框處）點選想要更換的佈景主題，這裡使用`atom-material-ui`做為示範
+1\. 於UI Theme（使用者介面佈景主題）（黃框處）點選想要更換的佈景主題，這裡使用`atom-material-ui`做為示範
 
 ![點選要設置的佈景主題）]({{site.url}}/img/2022-01-25-atom/themes-1.png "點選要設置的佈景主題）")
 
-2. 點選後就煥然一新啦！
+2\. 點選後就煥然一新啦！
 
 ![套用atom-material-ui佈景主題）]({{site.url}}/img/2022-01-25-atom/themes-2.png "套用atom-material-ui佈景主題")
 
@@ -233,26 +233,26 @@ div.part$$$$*2
 
 ### 如何修改Atom語言
 
-1. 於`File`（檔案）＞`Settings`（設定）＞`Install`（安裝）頁面中安裝完`atom-i18n`套件，點擊項目中的`Settings`（設定）按鈕  
+1\. 於`File`（檔案）＞`Settings`（設定）＞`Install`（安裝）頁面中安裝完`atom-i18n`套件，點擊項目中的`Settings`（設定）按鈕  
 或是在`File`（檔案）＞`Settings`（設定）＞`Packages`（擴充套件）頁面中，找到`atom-i18n`套件，點擊項目中的`Settings`（設定）按鈕
 
 ![在安裝頁面中安裝完atom-i18n套件，點擊項目中的「Settings」（設定）按鈕]({{site.url}}/img/2022-01-25-atom/atom-i18n-0.png "在安裝頁面中安裝完atom-i18n套件，點擊項目中的「Settings」（設定）按鈕")
 
 ![在擴充套件頁面中找到atom-i18n套件，點擊項目中的「Settings」（設定）按鈕]({{site.url}}/img/2022-01-25-atom/atom-i18n-1.png "在擴充套件頁面中找到atom-i18n套件，點擊項目中的「Settings」（設定）按鈕")
 
-2. 進入套件設定頁面後，找到「Language」（語言）下拉選單
+2\. 進入套件設定頁面後，找到「Language」（語言）下拉選單
 
 ![進入套件設定頁面後，找到「Language」（語言）下拉選單]({{site.url}}/img/2022-01-25-atom/atom-i18n-2.png "進入套件設定頁面後，找到「Language」（語言）下拉選單")
 
-3. 點選要更換的語言，我自己這裡是選繁體中文
+3\. 點選要更換的語言，我自己這裡是選繁體中文
 
 ![點選要更換的語言]({{site.url}}/img/2022-01-25-atom/atom-i18n-3.png "點選要更換的語言")
 
-4. 會跳出要求重新載入`Atom`的按鈕，點下去
+4\. 會跳出要求重新載入`Atom`的按鈕，點下去
 
 ![點擊重新載入按鈕]({{site.url}}/img/2022-01-25-atom/atom-i18n-4.png "點擊重新載入按鈕")
 
-5. 重新載入後的`Atom`就是嶄新的面貌啦
+5\. 重新載入後的`Atom`就是嶄新的面貌啦
 
 ![語言更換完成]({{site.url}}/img/2022-01-25-atom/atom-i18n-5.png "語言更換完成")
 
@@ -271,19 +271,19 @@ div.part$$$$*2
 
 ### 如何使用Color Picker（色彩選取工具）
 
-1. 游標停留在色碼上，按快捷鍵`Alt`+`Ctrl`+`C`，或右鍵點選選單中的「Color Picker（色彩選取工具）」項目
+1\. 游標停留在色碼上，按快捷鍵`Alt`+`Ctrl`+`C`，或右鍵點選選單中的「Color Picker（色彩選取工具）」項目
 
 ![游標停留在色碼上，按快捷鍵或右鍵點選選單中的「Color Picker（色彩選取工具）」項目]({{site.url}}/img/2022-01-25-atom/color-picker-0.jpg "游標停留在色碼上，按快捷鍵或右鍵點選選單中的「Color Picker（色彩選取工具）」項目")
 
-2. 即可開啟顏色選擇介面
+2\. 即可開啟顏色選擇介面
 
 ![即可開啟顏色選擇介面]({{site.url}}/img/2022-01-25-atom/color-picker-1.jpg "即可開啟顏色選擇介面")
 
-3. 在顏色選擇介面中，點選新顏色與色碼形式
+3\. 在顏色選擇介面中，點選新顏色與色碼形式
 
 ![在顏色選擇介面中，點選新顏色與色碼形式]({{site.url}}/img/2022-01-25-atom/color-picker-2.jpg "在顏色選擇介面中，點選新顏色與色碼形式")
 
-4. 點擊新顏色的色碼，即可替換原色碼
+4\. 點擊新顏色的色碼，即可替換原色碼
 
 ![點擊新顏色的色碼，即可替換原色碼]({{site.url}}/img/2022-01-25-atom/color-picker-3.jpg "點擊新顏色的色碼，即可替換原色碼")
 
